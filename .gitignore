@@ -9,7 +9,7 @@ env/
 # Python
 __pycache__/
 
-*.pb2.py
+*_pb2.py
 
 # Platformio
 .pio/
