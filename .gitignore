@@ -2,3 +2,15 @@
 .venv/
 venv/
 env/
+
+# lock files
+*.lock
+
+# Python
+__pycache__/
+
+*.pb2.py
+
+# Platformio
+.pio/
+
