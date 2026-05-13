@@ -6,6 +6,7 @@ dependencies = [
     "fastapi>=0.136.1",
     "protobuf>=7.34.1",
     "pyserial>=3.5",
+    "python-dotenv>=1.2.2",
     "uvicorn[standard]>=0.46.0",
     "websockets>=16.0",
 ]
