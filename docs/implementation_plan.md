@@ -378,10 +378,15 @@ A medida que se avance en los objetivos, se creara documentacion teorica en
 `docs/conceptos/`. Estos documentos explican los conceptos de programacion
 utilizados, pensados para que cualquier integrante del equipo pueda entenderlos.
 
+Algunos conceptos son transversales a todas las fases (como git) y se deben
+dominar desde el inicio. Otros son especificos de cada fase y se pueden aprender
+a medida que se necesiten.
+
 Documentos planificados:
 
 | Documento | Se necesita en | Temas |
 |-----------|---------------|-------|
+| `git.md` | Todas | Commits convencionales, ramas (branching model), merge vs rebase, pull requests, resolusion de conflictos, tags, .gitignore, stash, cherry-pick, reset vs revert, buenas practicas para trabajo en equipo |
 | `python_projects.md` | Fase 1 | Que es pyproject.toml, que es uv, como instalar dependencias, entornos virtuales |
 | `protobuf.md` | Fase 1-2 | Que es protobuf, archivos .proto, como generar codigo, serializar/deserializar |
 | `udp_multicast.md` | Fase 2 | Que es UDP, que es multicast, sockets en Python, diferencia con TCP |
