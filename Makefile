@@ -2,6 +2,7 @@
 
 help:
 	@echo "Targets disponibles:"
+	@echo "  make dev      - iniciar servidor en modo desarrollo"
 	@echo "  make proto    - generar clases Python desde .proto"
 
 
