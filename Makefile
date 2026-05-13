@@ -11,3 +11,10 @@ proto:
 	else \
 		./scripts/generate_proto.sh; \
 	fi
+
+dev:
+	@if [ "$(SHELL)" = "/bin/fish" ]; then \
+		source strategy/.venv/bin/activate.fish; \
+	else \
+		source strategy/.venv/bin/activate; \
+	fi && uvicorn strategy.src.server.main:app --reload
