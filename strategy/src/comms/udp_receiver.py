@@ -5,6 +5,8 @@ import struct
 
 from dotenv import load_dotenv
 
+from proto.packet_pb2 import Environment
+
 load_dotenv()
 
 MCAST_IP = os.getenv("MCAST_IP_IN")
@@ -25,3 +27,12 @@ class UDPReceiver:
     def receive(self):
         data, addr = self.sock.recvfrom(1024)
         return data
+
+    def deserialize(self, data):
+        env = Environment()
+        env.ParseFromString(data)
+        return env
+
+
+receiver = UDPReceiver()
+print(receiver.deserialize(receiver.receive()))

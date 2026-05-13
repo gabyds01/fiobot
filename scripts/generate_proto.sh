@@ -15,3 +15,6 @@ done
 for file in "$sim_dir"/*.proto; do
     protoc --proto_path="$sim_dir" --python_out="$output_dir" "$file"
 done
+
+# Fix python imports to use relative imports
+sed -i -E 's/^import (.*)_pb2/from . import \1_pb2/g' "$output_dir"/*.py
