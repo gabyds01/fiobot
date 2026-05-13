@@ -1,8 +1,8 @@
 #!/usr/bin/env fish
 
-set ref_dir "../proto/referee"
-set sim_dir "../proto/simulation"
-set output_dir "../strategy/src/proto/"
+set ref_dir "./proto/referee"
+set sim_dir "./proto/simulation"
+set output_dir "./strategy/src/proto/"
 
 # create proto folder in output directory if not exists
 if [ ! -d "$output_dir" ]
