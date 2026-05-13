@@ -178,3 +178,8 @@ Para corregir commits recientes en la copia local (reordenar, combinar o descart
 
 Crea un nuevo commit que aplica la inversa de un commit objetivo, de modo que el efecto de un commit original queda deshecho, pero el historial permanece intacto.
 
+## Qué es un subtree
+
+Es una copia del otro repositorio almacenada dentro de una carpeta de tu repo, junto con su historial de commits; el subtree se integra en el árbol del repo padre como cualquier otro directorio.
+
+**Diferencia clave con submodule:** el subtree copia y mezcla contenido directamente en el repositorio (más sencillo para clonar y trabajar), mientras que un submodule apunta a un commit externo y requiere pasos extras para inicializar/actualizar.
