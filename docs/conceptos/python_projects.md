@@ -24,3 +24,19 @@ Crea entornos virtuales, instala y quita paquetes, actualiza pyproject.toml y ge
 - Añadir dependencia de ejecución: `uv add <paquete>` (actualiza pyproject.toml y uv.lock).
 - Añadir dependencia de desarrollo: `uv add --dev <paquete>` para herramientas como linters, formatters o test runners.
 - Instalar desde lockfile o requirements: `uv sync` instala todo lo que figura en pyproject.toml y uv.lock.
+
+# Entornos virtuales
+
+Son entornos aislados que contienen una instalación de Python y paquetes separados del sistema global, para que cada proyecto tenga sus propias dependencias y versiones sin interferir entre sí.
+
+## Por qué utilizarlos?
+
+Por que evitan conflictos entre proyectos, facilitan reproducibilidad y permiten controlar versiones exactas de bibliotecas.
+
+# Makefile
+
+Es un archivo de texto llamado `Makefile` con reglas en la forma `target: deps` seguido de líneas de shell que se ejecutan si se quiere ese target.
+
+Para ejecutar, en la terminal se pone `make target` (por ejemplo `make dev`).
+
+Los targets pueden ser "falsos" (phony) si no crean archivos con ese nombre; se marca con `.PHONY` para evitar conflictos con archivos del mismo nombre.
