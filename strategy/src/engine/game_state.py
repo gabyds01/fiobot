@@ -1,8 +1,4 @@
-from dotenv import load_dotenv
-
 from comms.udp_receiver import UDPReceiver
-
-load_dotenv()
 
 
 class GameState:
@@ -41,20 +37,3 @@ class GameState:
             self.field.goal_width,
             self.field.goal_depth,
         )
-
-
-# Simulate strategy loop
-GameState = GameState()
-while True:
-    try:
-        GameState.update()
-    except BlockingIOError:
-        continue
-    except KeyboardInterrupt:
-        break
-
-    # print(GameState.get_game_score())
-    # print(GameState.get_field_dimensions())
-    print(GameState.get_ball())
-    # print(GameState.get_yellow_robots())
-    # print(GameState.get_blue_robots())

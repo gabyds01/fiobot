@@ -4,6 +4,8 @@ import os
 
 from proto.packet_pb2 import Packet
 
+from engine.commands import RobotCommand
+
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -23,16 +25,14 @@ class UDPSender:
     def send(self, data):
         self.sock.sendto(data, (MCAST_IP, MCAST_PORT))
 
-    def serialize(self):
+    def serialize(self, commands: list[RobotCommand]):
         packet = Packet()
-        cmd = packet.cmd.robot_commands.add()
-        cmd.id = 0
-        cmd.yellowteam = False
-        cmd.wheel_left = 10.0
-        cmd.wheel_right = 10.0
+
+        for robot_command in commands:
+            cmd = packet.cmd.robot_commands.add()
+            cmd.id = robot_command.robot_id
+            cmd.yellowteam = robot_command.yellow_team
+            cmd.wheel_left = robot_command.wheel_left
+            cmd.wheel_right = robot_command.wheel_right
 
         return packet.SerializeToString()
-
-
-sender = UDPSender()
-sender.send(sender.serialize())
