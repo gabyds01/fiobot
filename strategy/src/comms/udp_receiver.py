@@ -31,7 +31,7 @@ class UDPReceiver:
     def deserialize(self, data):
         env = Environment()
         env.ParseFromString(data)
-        return env
+        return env.frame
 
 
 receiver = UDPReceiver()
