@@ -17,6 +17,10 @@ class UDPReceiver:
     def __init__(self):
         # Set up socket
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
+
+        # Set to non-blocking mode
+        # self.sock.setblocking(False)
+
         self.sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
         # Join group with port
@@ -31,8 +35,4 @@ class UDPReceiver:
     def deserialize(self, data):
         env = Environment()
         env.ParseFromString(data)
-        return env.frame
-
-
-receiver = UDPReceiver()
-print(receiver.deserialize(receiver.receive()))
+        return env.frame, env.field, env.goals_blue, env.goals_yellow
